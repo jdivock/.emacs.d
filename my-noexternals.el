@@ -31,6 +31,7 @@
 (global-set-key "\M-t" 'ido-switch-buffer)
 ;; Page up/down
 (global-set-key "\M-K" 'evil-scroll-page-up)
+(global-set-key "\M-J" 'evil-scroll-page-down)
 ;; Fixing paste
 (global-set-key "\M-v" 'evil-paste-after)
 

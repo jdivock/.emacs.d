@@ -98,8 +98,8 @@
                 (set-face-foreground 'mode-line (cdr color))))))
 
 ;; term stuff
-(require 'multi-term)
-(setq multi-term-program "/bin/zsh")
+;; (require 'multi-term)
+;; (setq multi-term-program "/bin/zsh")
 
 ;; EDITORCONFIG - shit don't work
 ; (require 'editorconfig)
