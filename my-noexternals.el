@@ -1,5 +1,8 @@
 ;; ~/.emacs.d/my-noexternals.el
 
+;; ERC
+(load "~/.emacs.d/erc.el")
+
 ;; GENERAL BEHAVIOR
 (setq-default truncate-lines t) ;; truncate lines by default
 ;; Change backup dir and update more frequently
