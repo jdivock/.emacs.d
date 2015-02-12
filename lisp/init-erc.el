@@ -62,3 +62,5 @@
     (erc :server "irc.freenode.net" :port 6667
          :nick "jdivock" :full-name "Jason Divock")
     ))
+
+(provide 'init-erc)

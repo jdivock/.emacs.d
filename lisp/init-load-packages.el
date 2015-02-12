@@ -13,24 +13,26 @@
     ac-html
     ac-js2
     auto-complete
+    color-theme-sanityinc-tomorrow
     evil
     flymake-sass
     js-comint
-    color-theme-sanityinc-tomorrow
     js2-mode
     json-mode
     jsx-mode
     less-css-mode
     multi-term
     nodejs-repl
+;;    org-toodledo
     powerline
     projectile
     sass-mode
     scss-mode
     starter-kit
     wc-mode
+    web-mode
     yasnippet
-    web-mode) "a list of packages to load at launch.")
+    ) "a list of packages to load at launch.")
 ;
 
 ; method to check if all packages are installed
@@ -49,3 +51,5 @@
 	      (dolist (p required-packages)
 		    (when (not (package-installed-p p))
 		            (package-install p))))
+
+(provide 'init-load-packages)
