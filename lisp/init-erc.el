@@ -1,4 +1,10 @@
+;; EXAMPLE PRIVATE ERC
+;; (add-hook 'erc-after-connect '(lambda (SERVER NICK)
+;;               (erc-message "PRIVMSG" "NickServ identify <pass>")))
+
 (load "~/.emacs.d/private/erc.el")
+
+(add-to-list 'erc-modules 'notifications)
 
 (require 'erc-join)
 (erc-autojoin-mode 1)
