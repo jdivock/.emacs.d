@@ -3,7 +3,7 @@
 (require-package 'js2-mode)
 (require-package 'json-mode)
 (require-package 'jsx-mode)
-(require-package 'nodejs-repl)
+;;(require-package 'nodejs-repl)
 
 ;;; Set better js mode for js files
 ;;(add-hook 'js-mode-hook 'js2-minor-mode)

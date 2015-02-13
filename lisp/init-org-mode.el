@@ -3,6 +3,7 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-agenda-files (list "~/org/work.org"
                              "~/org/home.org"
+                             "~/org/code.org"
                              "~/org/moving.org"))
 (setq org-log-done t)
 

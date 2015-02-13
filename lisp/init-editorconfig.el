@@ -1,5 +1,5 @@
 (require-package 'editorconfig)
 ;; EDITORCONFIG - shit don't work
-; (require 'editorconfig)
+(require 'editorconfig)
 
 (provide 'init-editorconfig)
