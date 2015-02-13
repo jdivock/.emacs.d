@@ -4,7 +4,7 @@
 
 (load "~/.emacs.d/private/erc.el")
 
-(add-to-list 'erc-modules 'notifications)
+(require 'erc-terminal-notifier)
 
 (require 'erc-join)
 (erc-autojoin-mode 1)
