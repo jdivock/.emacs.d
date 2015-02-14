@@ -12,4 +12,10 @@
 (setq ns-use-native-fullscreen nil)
 ;; (toggle-frame-fullscreen) ;; and start in full screen while we're at it
 
+;; For some reason mac isn't using system path which is causing some
+;; fun issues
+(require-package 'exec-path-from-shell)
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
+
 (provide 'init-general)
