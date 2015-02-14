@@ -3,9 +3,7 @@
 (require-package 'js2-mode)
 (require-package 'json-mode)
 (require-package 'jsx-mode)
-(require-package 'nodejs-repl)
 (require-package 'flycheck)
-
 ;;; Set better js mode for js files
 (setq-default js2-auto-indent-p t)
 (setq-default js2-cleanup-whitespace t)
