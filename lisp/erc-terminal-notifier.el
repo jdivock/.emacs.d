@@ -1,8 +1,8 @@
-(defvar erc-terminal-notifier-command nil "/usr/local/bin/")
+(defvar erc-terminal-notifier-command "/usr/local/bin/")
 (setq erc-terminal-notifier-command (executable-find "terminal-notifier"))
 
 (defun erc-terminal-notifier-notify (title message)
-  "Show a message with `terminal-notifier-command`."
+  "Show a message with `terminal-notifier-command`." 
   (start-process "terminal-notifier"
                  "*terminal-notifier*"
                  erc-terminal-notifier-command
