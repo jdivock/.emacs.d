@@ -1,3 +1,5 @@
+;; Install terminal-notifier via homebrew or what-have-you for this
+;; to work properly
 (defvar erc-terminal-notifier-command "/usr/local/bin/" "path where terminal-notifier resides")
 (setq erc-terminal-notifier-command (executable-find "terminal-notifier"))
 
