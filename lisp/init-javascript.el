@@ -5,19 +5,20 @@
 (require-package 'jsx-mode)
 (require-package 'flycheck)
 ;;; Set better js mode for js files
-(setq-default js2-auto-indent-p t)
-(setq-default js2-cleanup-whitespace t)
-(setq-default js2-enter-indents-newline t)
-(setq-default js2-global-externs "jQuery $")
-(setq-default js2-indent-on-enter-key t)
-(setq-default js2-mode-indent-ignore-first-tab t)
+;(setq-default js2-auto-indent-p t)
+;;(setq-default js2-cleanup-whitespace t)
+;;(setq-default js2-enter-indents-newline t)
+;;(setq-default js2-global-externs "jQuery $")
+;;(setq-default js2-indent-on-enter-key t)
+;;(setq-default js2-mode-indent-ignore-first-tab t)
 ;; Letting flycheck parse errors since it respects jshint
 (setq-default js2-show-parse-errors nil)
 
-(add-hook 'js2-mode-hook 'ac-js2-mode)
-(add-hook 'js2-mode-hook 'color-identifiers-mode)
+;;(add-hook 'js2-mode-hook 'ac-js2-mode)
+;;(add-hook 'js2-mode-hook 'color-identifiers-mode)
 
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
 
 (require 'flycheck)
 (add-hook 'js2-mode-hook
