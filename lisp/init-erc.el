@@ -4,6 +4,7 @@
 
 (load "~/.emacs.d/private/erc.el")
 
+(require 'erc-terminal-notifier)
 
 (require 'erc-join)
 (erc-autojoin-mode 1)
@@ -68,6 +69,5 @@
          :nick "jdivock" :full-name "Jason Divock")
     ))
 
-(require 'erc-terminal-notifier)
 
 (provide 'init-erc)

@@ -2,11 +2,11 @@
 
 (require 'init-utils)
 (require 'init-elpa)
+(require 'init-general)
 
 (require 'init-erc)
 
 (require 'init-fonts)
-(require 'init-general)
 (require 'init-key-mappings)
 (require 'init-org-mode)
 (require 'init-theme)
