@@ -14,8 +14,8 @@
 ;; Letting flycheck parse errors since it respects jshint
 (setq-default js2-show-parse-errors nil)
 
-;;(add-hook 'js2-mode-hook 'ac-js2-mode)
-;;(add-hook 'js2-mode-hook 'color-identifiers-mode)
+(add-hook 'js2-mode-hook 'ac-js2-mode)
+(add-hook 'js2-mode-hook 'color-identifiers-mode)
 
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
@@ -27,7 +27,7 @@
 
 (font-lock-add-keywords
  'js2-mode `(("\\(function *\\)("
-              (0 (progn (compose-region (match-beginning 1) (match-end 1) "ƒ")
+              (0 (progn (compose-region (match-beginning 1) (match-end 1) "λ")
                         nil)))))
 
 ;; JS NODE REPL

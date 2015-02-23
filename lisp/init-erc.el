@@ -4,7 +4,6 @@
 
 (load "~/.emacs.d/private/erc.el")
 
-(require 'erc-terminal-notifier)
 
 (require 'erc-join)
 (erc-autojoin-mode 1)
@@ -68,5 +67,7 @@
     (erc :server "irc.freenode.net" :port 6667
          :nick "jdivock" :full-name "Jason Divock")
     ))
+
+(require 'erc-terminal-notifier)
 
 (provide 'init-erc)
