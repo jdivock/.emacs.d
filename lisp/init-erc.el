@@ -7,6 +7,8 @@
 (require 'erc-terminal-notifier)
 
 (require 'erc-join)
+(setq erc-join-buffer 'bury)
+
 (erc-autojoin-mode 1)
 (setq erc-autojoin-channels-alist
       '(("freenode.net" "#emacs" "#hugeinc" "#reactjs" )))
