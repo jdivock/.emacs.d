@@ -18,4 +18,6 @@
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
+(setq explicit-bash-args '("--login" "-i"))
+
 (provide 'init-general)
