@@ -38,6 +38,10 @@
 (erc-timestamp-mode t)
 (setq erc-timestamp-format "[%R-%m/%d]")
 
+
+(setq erc-hide-list '("JOIN" "PART" "QUIT"))
+;;(setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE" "324" "329" "332" "333" "353" "477" "VOICE" "DEVOICE"))
+
 ;; logging:
 (setq erc-log-insert-log-on-open nil)
 (setq erc-log-channels t)
