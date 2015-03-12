@@ -20,4 +20,9 @@
 
 (setq explicit-bash-args '("--login" "-i"))
 
+;; uh, not sure why this isn't set by default
+(custom-set-variables
+ '(speedbar-show-unknown-files t)
+)
+
 (provide 'init-general)
