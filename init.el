@@ -40,7 +40,8 @@
  '(js-indent-level 8)
  '(safe-local-variable-values
    (quote
-    ((js-indent-offset . 4)
+    ((default-tab-width . 4)
+     (js-indent-offset . 4)
      (css-indent-offset . 4)
      (js-indent-offset . 8)
      (css-indent-offset . 8)

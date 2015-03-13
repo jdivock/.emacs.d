@@ -8,9 +8,13 @@
 (setq vc-make-backup-files t)
 (setq auto-save-file-name-transforms '((".*" "~/.emacs.d/auto-save-list/" t)))
 
+(setq default-tab-width 4)
 ;;; fix fullscreen to not be mac naitive
 (setq ns-use-native-fullscreen nil)
 ;; (toggle-frame-fullscreen) ;; and start in full screen while we're at it
+
+;; Make URLs clickable from shell
+(add-hook 'shell-mode-hook (lambda () (goto-address-mode )))
 
 ;; For some reason mac isn't using system path which is causing some
 ;; fun issues
@@ -19,6 +23,12 @@
   (exec-path-from-shell-initialize))
 
 (setq explicit-bash-args '("--login" "-i"))
+
+(defun after-save-fn () nil)
+(add-hook 'after-save-hook 'after-save-fn)
+
+;; Whitespace cleanup, make sure this happens in all buffers
+(add-hook 'before-save-hook 'whitespace-cleanup)
 
 ;; uh, not sure why this isn't set by default
 (custom-set-variables
