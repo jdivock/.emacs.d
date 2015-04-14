@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: l10n
+# key: l10n
+# --
+{* @L10N $0 *}
+{'$1'|t:'$2'}

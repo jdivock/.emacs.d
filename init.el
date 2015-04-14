@@ -21,7 +21,8 @@
 (require 'init-powerline)
 (require 'init-projectile)
 (require 'init-wc-mode)
-(require 'init-yasnippet)
+;(require 'init-yasnippet)
+(require 'init-hippie-expand)
 (require 'init-html)
 
 ;;(load "~/.emacs.d/my-loadpackages.el")
@@ -40,14 +41,24 @@
  '(js-indent-level 8)
  '(safe-local-variable-values
    (quote
-    ((default-tab-width . 4)
+    ((flycheck-disabled-checkers quote
+                                 (javascript-jshint))
+     (indent-tabs-mode t)
+     (js2-indent-switch-body . t)
+     (auto-fill-mode . -1)
+     (sgml-basic-offset . 4)
+     (default-tab-width . 4)
      (js-indent-offset . 4)
      (css-indent-offset . 4)
      (js-indent-offset . 8)
      (css-indent-offset . 8)
      (whitespace-line-column . 80)
      (lexical-binding . t))))
- '(speedbar-show-unknown-files t))
+ '(speedbar-show-unknown-files t)
+ '(znc-servers
+   (quote
+    (("ec2-52-8-62-127.us-west-1.compute.amazonaws.com" 49153 nil
+      ((network-slug "jdivock" "37PCVx{e&vth")))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

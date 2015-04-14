@@ -4,6 +4,7 @@
 ;; Change backup dir and update more frequently
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 (setq delete-old-versions -1)
+(setq fill-column 80)
 (setq version-control t)
 (setq vc-make-backup-files t)
 (setq auto-save-file-name-transforms '((".*" "~/.emacs.d/auto-save-list/" t)))
@@ -24,8 +25,8 @@
 
 (setq explicit-bash-args '("--login" "-i"))
 
-(defun after-save-fn () nil)
-(add-hook 'after-save-hook 'after-save-fn)
+;;(defun after-save-fn () nil)
+;;(add-hook 'after-save-hook 'after-save-fn)
 
 ;; Whitespace cleanup, make sure this happens in all buffers
 (add-hook 'before-save-hook 'whitespace-cleanup)

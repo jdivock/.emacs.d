@@ -11,3 +11,4 @@ ac-comphist.dat
 /private
 *.swp
 /.org-id-locations
+/tramp

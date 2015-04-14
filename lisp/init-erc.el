@@ -4,14 +4,18 @@
 
 (load "~/.emacs.d/private/erc.el")
 
+(require-package 'znc)
+
+(require 'znc)
+
 (require 'erc-terminal-notifier)
 
 (require 'erc-join)
 (setq erc-join-buffer 'bury)
 
-(erc-autojoin-mode 1)
-(setq erc-autojoin-channels-alist
-      '(("freenode.net" "#emacs" "#hugeinc" "#reactjs" )))
+;;(erc-autojoin-mode 1)
+;;(setq erc-autojoin-channels-alist
+;;      '(("freenode.net" "#emacs" "#hugeinc" "#reactjs" )))
 
 (require 'erc-match)
 (setq erc-keywords '("jdivock"))

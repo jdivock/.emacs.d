@@ -5,8 +5,10 @@
 ;;(require 'web-mode)
 ;;(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
-(add-to-list 'auto-mode-alist '("\\.tmpl$" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.tmpl$" . web-mode))
+
 (add-hook 'html-mode-hook 'ac-html-enable)
+;;(add-hook 'html-mode-hook 'my-html-mode-hook)
 ;; (add-to-list 'web-mode-ac-sources-alist
 ;;              '("html" . (ac-source-html-attribute-value
 ;;                          ac-source-html-tag
