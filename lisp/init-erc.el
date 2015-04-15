@@ -2,7 +2,7 @@
 ;; (add-hook 'erc-after-connect '(lambda (SERVER NICK)
 ;;               (erc-message "PRIVMSG" "NickServ identify <pass>")))
 
-(load "~/.emacs.d/private/erc.el")
+;(load "~/.emacs.d/private/erc.el")
 
 (require-package 'znc)
 
@@ -71,13 +71,13 @@
 (setq erc-truncate-buffer-on-save t)
 
 ;;; Finally, connect to the networks.
-(defun irc-maybe ()
-  "Connect to IRC."
-  (interactive)
-  (when (y-or-n-p "IRC? ")
-    (erc :server "irc.freenode.net" :port 6667
-         :nick "jdivock" :full-name "Jason Divock")
-    ))
+;; (defun irc-maybe ()
+;;   "Connect to IRC."
+;;   (interactive)
+;;   (when (y-or-n-p "IRC? ")
+;;     (erc :server "irc.freenode.net" :port 6667
+;;          :nick "jdivock" :full-name "Jason Divock")
+;;     ))
 
 
 (provide 'init-erc)
