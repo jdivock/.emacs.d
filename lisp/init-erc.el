@@ -2,7 +2,7 @@
 ;; (add-hook 'erc-after-connect '(lambda (SERVER NICK)
 ;;               (erc-message "PRIVMSG" "NickServ identify <pass>")))
 
-;(load "~/.emacs.d/private/erc.el")
+(load "~/.emacs.d/private/erc.el")
 
 (require-package 'znc)
 
