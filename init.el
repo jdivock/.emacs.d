@@ -55,10 +55,7 @@
      (whitespace-line-column . 80)
      (lexical-binding . t))))
  '(speedbar-show-unknown-files t)
- '(znc-servers
-   (quote
-    (("stuff.jdivock.com" 49153 nil
-      ((default "jdivock" "37PCVx{e&vth")))))))
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
