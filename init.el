@@ -24,6 +24,7 @@
 ;(require 'init-yasnippet)
 (require 'init-hippie-expand)
 (require 'init-html)
+(require 'init-firestarter)
 
 ;;(load "~/.emacs.d/my-loadpackages.el")
 ;;(add-hook 'after-init-hook '(lambda ()
