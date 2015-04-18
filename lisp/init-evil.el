@@ -11,7 +11,6 @@
 (setq evil-operator-state-cursor '("red" hollow))
 
 
-
 ;; change mode-line color by evil state
 ; (lexical-let ((default-color (cons (face-background 'mode-line)
 ; 				   (face-foreground 'mode-line))))

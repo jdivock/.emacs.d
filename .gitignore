@@ -12,3 +12,4 @@ ac-comphist.dat
 *.swp
 /.org-id-locations
 /tramp
+/cache/

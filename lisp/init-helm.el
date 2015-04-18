@@ -1,4 +1,5 @@
 (require-package 'helm)
+(require-package 'helm-ag)
 (require-package 'helm-projectile)
 ;; helm settings (TAB in helm window for actions over selected items,
 ;; C-SPC to select items)

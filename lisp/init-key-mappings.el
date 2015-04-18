@@ -21,7 +21,8 @@
 (global-set-key "\M-s" 'save-buffer)
 
 ;; Find Find
-(global-set-key "\M-f" 'ido-find-file)
+(global-set-key "\M-f" 'helm-find-file)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 ;; Find File in project
 (global-set-key "\M-p" 'helm-projectile)
