@@ -10,7 +10,7 @@
 ;; Quick kill buffer
 (global-set-key "\M-w" 'kill-this-buffer)
 ;; Quick switch buffers
-(global-set-key "\M-t" 'ido-switch-buffer)
+(global-set-key "\M-t" 'helm-buffers-list)
 ;; Page up/down
 (global-set-key "\M-K" 'evil-scroll-page-up)
 (global-set-key "\M-J" 'evil-scroll-page-down)
@@ -24,6 +24,6 @@
 (global-set-key "\M-f" 'ido-find-file)
 
 ;; Find File in project
-(global-set-key "\M-p" 'projectile-find-file)
+(global-set-key "\M-p" 'helm-projectile)
 
 (provide 'init-key-mappings)

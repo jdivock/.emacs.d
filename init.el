@@ -20,6 +20,7 @@
 (require 'init-evil)
 (require 'init-powerline)
 (require 'init-projectile)
+(require 'init-helm)
 (require 'init-wc-mode)
 ;(require 'init-yasnippet)
 ;(require 'init-hippie-expand)
