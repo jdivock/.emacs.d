@@ -23,7 +23,7 @@
 (require 'init-helm)
 (require 'init-project-explorer)
 (require 'init-wc-mode)
-;(require 'init-yasnippet)
+(require 'init-yasnippet)
 ;(require 'init-hippie-expand)
 (require 'init-html)
 ;(require 'init-firestarter)
