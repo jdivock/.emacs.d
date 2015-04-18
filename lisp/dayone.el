@@ -25,6 +25,7 @@
   (switch-to-buffer (get-buffer-create dayone-buffer))
   (use-local-map dayone-mode-map)
   (toggle-truncate-lines)
+  (flyspell-mode)
   (wc-mode)
   (setq major-mode 'dayone-mode mode-name "DayOne"))
 
