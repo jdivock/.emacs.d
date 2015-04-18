@@ -21,6 +21,9 @@
 
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
+;; JSX MODE
+;; Shitty js2-mode support and won't indent, so using web-mode
+(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
 
 (require 'flycheck)
 (add-hook 'js2-mode-hook
