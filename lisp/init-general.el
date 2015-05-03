@@ -25,6 +25,11 @@
 
 (setq explicit-bash-args '("--login" "-i"))
 
+(add-hook
+ 'eshell-mode-hook
+ '(lambda ()
+    (eshell/export "NODE_NO_READLINE=1")))
+
 ;;(defun after-save-fn () nil)
 ;;(add-hook 'after-save-hook 'after-save-fn)
 
