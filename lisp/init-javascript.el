@@ -17,9 +17,21 @@
 (setq-default js2-show-parse-errors nil)
 
 (add-hook 'js2-mode-hook 'ac-js2-mode)
-(add-hook 'js2-mode-hook 'color-identifiers-mode)
+;;(add-hook 'js2-mode-hook 'color-identifiers-mode)
 
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.ios.js$" . web-mode))
+
+
+(setq web-mode-ac-sources-alist
+  '(("css" . (ac-source-css-property))
+    ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
+
+
+(setq web-mode-content-types-alist
+      '(("jsx" . "**/*\\.ios.js\\'")
+        ))
+
 
 ;; JSX MODE
 ;; Shitty js2-mode support and won't indent, so using web-mode
