@@ -44,7 +44,10 @@
  '(js-indent-level 8)
  '(safe-local-variable-values
    (quote
-    ((flycheck-disabled-checkers quote
+    ((web-mode-content-types-alist quote
+                                   (("jsx" . "**/*\\.ios.js\\'")))
+     (engine . jsx)
+     (flycheck-disabled-checkers quote
                                  (javascript-jshint))
      (indent-tabs-mode t)
      (js2-indent-switch-body . t)
@@ -57,8 +60,7 @@
      (css-indent-offset . 8)
      (whitespace-line-column . 80)
      (lexical-binding . t))))
- '(speedbar-show-unknown-files t)
- )
+ '(speedbar-show-unknown-files t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

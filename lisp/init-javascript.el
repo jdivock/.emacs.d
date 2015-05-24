@@ -6,7 +6,7 @@
 (require-package 'flycheck)
 ;;; Set better js mode for js files
 
-;(setq-default js2-auto-indent-p t)
+;;(setq-default js2-auto-indent-p t)
 ;;(setq-default js2-cleanup-whitespace t)
 ;;(setq-default js2-enter-indents-newline t)
 ;;(setq-default js2-global-externs "jQuery $")
@@ -16,6 +16,10 @@
 ;; Letting flycheck parse errors since it respects jshint
 (setq-default js2-show-parse-errors nil)
 
+
+;; Don't auto-quote in web mode, makes jsx a PITA
+(setq web-mode-enable-auto-quoting nil)
+
 (add-hook 'js2-mode-hook 'ac-js2-mode)
 ;;(add-hook 'js2-mode-hook 'color-identifiers-mode)
 
@@ -24,8 +28,8 @@
 
 
 (setq web-mode-ac-sources-alist
-  '(("css" . (ac-source-css-property))
-    ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
+      '(("css" . (ac-source-css-property))
+        ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
 
 
 (setq web-mode-content-types-alist
