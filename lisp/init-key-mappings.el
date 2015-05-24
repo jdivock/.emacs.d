@@ -24,6 +24,8 @@
 (global-set-key "\M-f" 'helm-find-file)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 
+(global-set-key (kbd "C-x C-w") (lambda () (interactive) (shell-command "cd /box/www/current_local && work sync")))
+
 ;; Find File in project
 (global-set-key "\M-p" 'helm-projectile)
 
