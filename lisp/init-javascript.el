@@ -26,15 +26,36 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.ios.js$" . web-mode))
 
+;; JSON Mode
+(add-to-list 'auto-mode-alist '("\\.jshintrc$" . json-mode))
+(add-to-list 'auto-mode-alist '("\\.eslintrc$" . json-mode))
+
+(add-hook 'json-mode-hook
+          (lambda ()
+            (make-local-variable 'js-indent-level)
+            (setq js-indent-level 2)))
 
 (setq web-mode-ac-sources-alist
       '(("css" . (ac-source-css-property))
         ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
 
-
+;; Flip to JSX mode when working with .ios.js files
 (setq web-mode-content-types-alist
       '(("jsx" . "**/*\\.ios.js\\'")
         ))
+
+;; disable jshint since we prefer eslint checking
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+    '(javascript-jshint)))
+
+;; use eslint with web-mode for jsx files
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+
+;; disable json-jsonlist checking for json files
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+    '(json-jsonlist)))
 
 
 ;; JSX MODE
@@ -45,9 +66,16 @@
 (add-hook 'js2-mode-hook
           (lambda () (flycheck-mode t)))
 
+(add-hook 'web-mode-hook
+          (lambda () (flycheck-mode t)))
 
 (font-lock-add-keywords
  'js2-mode `(("\\(function *\\)("
+              (0 (progn (compose-region (match-beginning 1) (match-end 1) "λ")
+                        nil)))))
+;; TODO: fix copypasta
+(font-lock-add-keywords
+ 'web-mode `(("\\(function *\\)("
               (0 (progn (compose-region (match-beginning 1) (match-end 1) "λ")
                         nil)))))
 
