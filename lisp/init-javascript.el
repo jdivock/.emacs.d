@@ -81,6 +81,19 @@
               (0 (progn (compose-region (match-beginning 1) (match-end 1) "λ")
                         nil)))))
 
+
+;; Giant web-mode hook that probably belongs in a better place
+(defun my-web-mode-hook ()
+  "Hooks for web mode."
+  (setq web-mode-ac-sources-alist
+        '(("css" . (ac-source-css-property))
+          ("jsx" . (ac-source-words-in-buffer ac-source-words-in-same-mode-buffers))
+          ("js" . (ac-source-words-in-buffer ac-source-words-in-same-mode-buffers))
+          ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
+  )
+
+(add-hook 'web-mode-hook 'my-web-mode-hook)
+
 ;; JS NODE REPL
 (autoload 'js-comint "js-comint"
   "Hooking JavaScript interpreter up to the JS Files." t nil)
