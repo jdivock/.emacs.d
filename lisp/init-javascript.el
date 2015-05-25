@@ -27,6 +27,7 @@
 (add-hook 'js2-mode-hook 'ac-js2-mode)
 ;;(add-hook 'js2-mode-hook 'color-identifiers-mode)
 
+(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.ios.js$" . web-mode))
 
@@ -60,11 +61,6 @@
 (setq-default flycheck-disabled-checkers
   (append flycheck-disabled-checkers
     '(json-jsonlist)))
-
-
-;; JSX MODE
-;; Shitty js2-mode support and won't indent, so using web-mode
-(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
 
 
 (add-hook 'js2-mode-hook
