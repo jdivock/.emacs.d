@@ -4,6 +4,8 @@
 (require-package 'json-mode)
 (require-package 'jsx-mode)
 (require-package 'flycheck)
+(require 'flycheck)
+
 ;;; Set better js mode for js files
 
 ;;(setq-default js2-auto-indent-p t)
@@ -47,7 +49,7 @@
 ;; disable jshint since we prefer eslint checking
 (setq-default flycheck-disabled-checkers
   (append flycheck-disabled-checkers
-    '(javascript-jshint)))
+   '(javascript-jshint)))
 
 ;; use eslint with web-mode for jsx files
 (flycheck-add-mode 'javascript-eslint 'web-mode)
@@ -62,7 +64,7 @@
 ;; Shitty js2-mode support and won't indent, so using web-mode
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
 
-(require 'flycheck)
+
 (add-hook 'js2-mode-hook
           (lambda () (flycheck-mode t)))
 
