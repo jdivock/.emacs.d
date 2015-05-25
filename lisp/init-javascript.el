@@ -4,6 +4,8 @@
 (require-package 'json-mode)
 (require-package 'jsx-mode)
 (require-package 'flycheck)
+(require-package 'tern)
+(require-package 'tern-auto-complete)
 (require 'flycheck)
 
 ;;; Set better js mode for js files
@@ -90,6 +92,7 @@
           ("jsx" . (ac-source-words-in-buffer ac-source-words-in-same-mode-buffers))
           ("js" . (ac-source-words-in-buffer ac-source-words-in-same-mode-buffers))
           ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
+  (tern-mode t)
   )
 
 (add-hook 'web-mode-hook 'my-web-mode-hook)

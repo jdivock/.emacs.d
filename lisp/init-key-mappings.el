@@ -20,6 +20,7 @@
 ;; after
 (global-set-key "\M-s" 'save-buffer)
 
+(global-set-key (kbd "C-c i") 'magit-status)
 ;; Find Find
 (global-set-key "\M-f" 'helm-find-file)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
