@@ -13,6 +13,7 @@
 (require 'init-theme)
 
 (require 'init-auto-complete)
+(require 'init-yaml)
 (require 'init-javascript)
 (require 'init-less)
 (require 'init-sass)
