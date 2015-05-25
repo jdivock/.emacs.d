@@ -55,6 +55,21 @@
                 inferior-emacs-lisp-mode))
   (add-to-list 'ac-modes mode))
 
+(setq web-mode-ac-sources-alist
+  '(("css" . (ac-source-css-property))
+    ("jsx" . (ac-source-words-in-buffer ac-source-words-in-same-mode-buffers))
+    ("js" . (ac-source-words-in-buffer ac-source-words-in-same-mode-buffers))
+    ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
+
+(add-hook 'web-mode-before-auto-complete-hooks
+            '(lambda ()
+               (let ((web-mode-cur-language
+                      (web-mode-language-at-pos)))
+                 (if (string= web-mode-cur-language "jsx")
+                     (yas-activate-extra-mode 'js-mode)
+                   (yas-deactivate-extra-mode 'js-mode))
+                 )))
+
 
 ;; Exclude very large buffers from dabbrev
 (defun sanityinc/dabbrev-friend-buffer (other-buffer)
