@@ -1,6 +1,10 @@
 (load "~/.emacs.d/private/jabber-private.el")
 
 (require-package 'jabber)
+;(require 'jabbber-mode)
+
+;(require 'jabber-autoloads)
+;;(defun jabber-alert-presence-message-function (who oldstatus newstatus statustext) nil)
 
 (defun jabber-presence-default-message (who oldstatus newstatus statustext) nil)
 (add-hook 'jabber-chat-mode-hook (lambda ()
@@ -13,8 +17,6 @@
 
 ;; attempt to auto-reconnect
 (setq jabber-auto-reconnect t)
-(setq jabber-chatstates-confirm nil)
-
 
 ;; Don't allow anonymous authentication
 (defadvice jabber-xml-get-children (after eaw-remove-anonymous)

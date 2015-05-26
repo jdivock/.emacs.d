@@ -33,6 +33,9 @@
         ))
 
 
+(add-hook 'web-mode-hook
+          (lambda () (web-mode-enable-auto-quoting nil)))
+
 ;; JSX MODE
 ;; Shitty js2-mode support and won't indent, so using web-mode
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
@@ -44,6 +47,11 @@
 
 (font-lock-add-keywords
  'js2-mode `(("\\(function *\\)("
+              (0 (progn (compose-region (match-beginning 1) (match-end 1) "λ")
+                        nil)))))
+
+(font-lock-add-keywords
+ 'web-mode `(("\\(function *\\)("
               (0 (progn (compose-region (match-beginning 1) (match-end 1) "λ")
                         nil)))))
 
