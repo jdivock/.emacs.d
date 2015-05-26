@@ -13,6 +13,7 @@
 (require 'init-theme)
 
 (require 'init-auto-complete)
+(require 'init-yaml)
 (require 'init-javascript)
 (require 'init-less)
 (require 'init-sass)
@@ -46,7 +47,10 @@
  '(js-indent-level 8)
  '(safe-local-variable-values
    (quote
-    ((flycheck-disabled-checkers quote
+    ((web-mode-content-types-alist quote
+                                   (("jsx" . "**/*\\.ios.js\\'")))
+     (engine . jsx)
+     (flycheck-disabled-checkers quote
                                  (javascript-jshint))
      (indent-tabs-mode t)
      (js2-indent-switch-body . t)

@@ -4,9 +4,13 @@
 (require-package 'json-mode)
 (require-package 'jsx-mode)
 (require-package 'flycheck)
+(require-package 'tern)
+(require-package 'tern-auto-complete)
+(require 'flycheck)
+
 ;;; Set better js mode for js files
 
-;(setq-default js2-auto-indent-p t)
+;;(setq-default js2-auto-indent-p t)
 ;;(setq-default js2-cleanup-whitespace t)
 ;;(setq-default js2-enter-indents-newline t)
 ;;(setq-default js2-global-externs "jQuery $")
@@ -16,22 +20,47 @@
 ;; Letting flycheck parse errors since it respects jshint
 (setq-default js2-show-parse-errors nil)
 
+
+;; Don't auto-quote in web mode, makes jsx a PITA
+(setq web-mode-enable-auto-quoting nil)
+
 (add-hook 'js2-mode-hook 'ac-js2-mode)
 ;;(add-hook 'js2-mode-hook 'color-identifiers-mode)
 
+(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.ios.js$" . web-mode))
 
+;; JSON Mode
+(add-to-list 'auto-mode-alist '("\\.jshintrc$" . json-mode))
+(add-to-list 'auto-mode-alist '("\\.eslintrc$" . json-mode))
+
+(add-hook 'json-mode-hook
+          (lambda ()
+            (make-local-variable 'js-indent-level)
+            (setq js-indent-level 2)))
 
 (setq web-mode-ac-sources-alist
-  '(("css" . (ac-source-css-property))
-    ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
+      '(("css" . (ac-source-css-property))
+        ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
 
-
+;; Flip to JSX mode when working with .ios.js files
 (setq web-mode-content-types-alist
       '(("jsx" . "**/*\\.ios.js\\'")
         ))
 
+;; disable jshint since we prefer eslint checking
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+   '(javascript-jshint)))
+
+;; use eslint with web-mode for jsx files
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+
+;; disable json-jsonlist checking for json files
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+    '(json-jsonlist)))
 
 (add-hook 'web-mode-hook
           (lambda () (web-mode-enable-auto-quoting nil)))
@@ -40,20 +69,35 @@
 ;; Shitty js2-mode support and won't indent, so using web-mode
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
 
-(require 'flycheck)
 (add-hook 'js2-mode-hook
           (lambda () (flycheck-mode t)))
 
+(add-hook 'web-mode-hook
+          (lambda () (flycheck-mode t)))
 
 (font-lock-add-keywords
  'js2-mode `(("\\(function *\\)("
               (0 (progn (compose-region (match-beginning 1) (match-end 1) "λ")
                         nil)))))
-
+;; TODO: fix copypasta
 (font-lock-add-keywords
  'web-mode `(("\\(function *\\)("
               (0 (progn (compose-region (match-beginning 1) (match-end 1) "λ")
                         nil)))))
+
+
+;; Giant web-mode hook that probably belongs in a better place
+(defun my-web-mode-hook ()
+  "Hooks for web mode."
+  (setq web-mode-ac-sources-alist
+        '(("css" . (ac-source-css-property))
+          ("jsx" . (ac-source-words-in-buffer ac-source-words-in-same-mode-buffers))
+          ("js" . (ac-source-words-in-buffer ac-source-words-in-same-mode-buffers))
+          ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
+  (tern-mode t)
+  )
+
+(add-hook 'web-mode-hook 'my-web-mode-hook)
 
 ;; JS NODE REPL
 (autoload 'js-comint "js-comint"
