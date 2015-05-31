@@ -35,6 +35,8 @@
 (add-to-list 'auto-mode-alist '("\\.jshintrc$" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.eslintrc$" . json-mode))
 
+(setq json-reformat:indent-width 2)
+
 (add-hook 'json-mode-hook
           (lambda ()
             (make-local-variable 'js-indent-level)
