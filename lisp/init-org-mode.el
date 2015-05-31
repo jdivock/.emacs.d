@@ -4,6 +4,22 @@
 (setq org-agenda-files (list "~/org"))
 (setq org-log-done t)
 
+(setq org-startup-indented t)
+(setq org-hide-leading-stars t)
+(setq org-odd-level-only nil)
+(setq org-insert-heading-respect-content nil)
+
+(setq org-use-speed-commands t)
+(setq org-startup-align-all-tables nil)
+(setq org-log-into-drawer nil)
+(setq org-tags-column 1)
+(setq org-ellipsis " \u25bc" )
+(setq org-speed-commands-user nil)
+(setq org-blank-before-new-entry '((heading . nil) (plain-list-item . nil)))
+
+(setq org-indent-mode t)
+(setq org-startup-truncated nil)
+
 ;; TRELLO ORG MODE - HAHA SHIT IS STILL BROKEN
 ;;(require-package 'org-trello)
 ;;(require 'org-trello)
