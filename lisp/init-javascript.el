@@ -64,6 +64,8 @@
   (append flycheck-disabled-checkers
     '(json-jsonlist)))
 
+(add-hook 'web-mode-hook
+          (lambda () (web-mode-enable-auto-quoting nil)))
 
 (add-hook 'js2-mode-hook
           (lambda () (flycheck-mode t)))
