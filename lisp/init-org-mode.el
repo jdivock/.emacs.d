@@ -39,23 +39,23 @@
 
 ;; Mobile org mode timer
 ;; moble sync
-;; (defvar org-mobile-sync-timer nil)
-;; (defvar org-mobile-sync-idle-secs (* 60 10))
-;; (defun org-mobile-sync ()
-;;   (interactive)
-;;   (org-mobile-pull)
-;;   (org-mobile-push))
-;; (defun org-mobile-sync-enable ()
-;;   "enable mobile org idle sync"
-;;   (interactive)
-;;   (setq org-mobile-sync-timer
-;;         (run-with-idle-timer org-mobile-sync-idle-secs t
-;;                              'org-mobile-sync)));
-;; (defun org-mobile-sync-disable ()
-;;   "disable mobile org idle sync"
-;;   (interactive)
-;;   (cancel-timer org-mobile-sync-timer))
+(defvar org-mobile-sync-timer nil)
+(defvar org-mobile-sync-idle-secs (* 60 10))
+(defun org-mobile-sync ()
+  (interactive)
+  (org-mobile-pull)
+  (org-mobile-push))
+(defun org-mobile-sync-enable ()
+  "enable mobile org idle sync"
+  (interactive)
+  (setq org-mobile-sync-timer
+        (run-with-idle-timer org-mobile-sync-idle-secs t
+                             'org-mobile-sync)));
+(defun org-mobile-sync-disable ()
+  "disable mobile org idle sync"
+  (interactive)
+  (cancel-timer org-mobile-sync-timer))
 ;; Not until I can figure out hot to hide properties, shit is annoying
-;; (org-mobile-sync-enable)
+(org-mobile-sync-enable)
 
 (provide 'init-org-mode)
