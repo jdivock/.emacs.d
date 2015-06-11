@@ -12,6 +12,7 @@
 (require 'init-org-mode)
 (require 'init-theme)
 
+(require 'init-eshell)
 (require 'init-auto-complete)
 (require 'init-yaml)
 (require 'init-javascript)
@@ -47,7 +48,8 @@
  '(js-indent-level 8)
  '(safe-local-variable-values
    (quote
-    ((web-mode-content-types-alist quote
+    ((yaml-indent-offset . 4)
+     (web-mode-content-types-alist quote
                                    (("jsx" . "**/*\\.ios.js\\'")))
      (engine . jsx)
      (flycheck-disabled-checkers quote
