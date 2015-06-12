@@ -16,6 +16,8 @@
 ;;(setq-default js2-global-externs "jQuery $")
 ;;(setq-default js2-indent-on-enter-key t)
 ;;(setq-default js2-mode-indent-ignore-first-tab t)
+(setq-default js-expr-indent-offset 8)
+(setq-default js-indent-level 8)
 
 ;; Letting flycheck parse errors since it respects jshint
 (setq-default js2-show-parse-errors nil)

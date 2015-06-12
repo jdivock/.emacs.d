@@ -20,6 +20,8 @@
 (setq org-indent-mode t)
 (setq org-startup-truncated nil)
 
+(setq org-agenda-window-setup 'current-window)
+
 ;; TRELLO ORG MODE - HAHA SHIT IS STILL BROKEN
 ;;(require-package 'org-trello)
 ;;(require 'org-trello)
