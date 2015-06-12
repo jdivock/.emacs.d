@@ -35,6 +35,7 @@
 ;;(defun after-save-fn () nil)
 ;;(add-hook 'after-save-hook 'after-save-fn)
 
+(setenv "NVM_DIR" "/Users/jdivock/.nvm")
 ;; Whitespace cleanup, make sure this happens in all buffers
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
