@@ -13,6 +13,7 @@
 (require 'init-theme)
 
 (require 'init-eshell)
+(require 'init-markdown)
 (require 'init-auto-complete)
 (require 'init-yaml)
 (require 'init-javascript)
