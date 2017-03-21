@@ -2,7 +2,7 @@
 ;; (add-hook 'erc-after-connect '(lambda (SERVER NICK)
 ;;               (erc-message "PRIVMSG" "NickServ identify <pass>")))
 
-(load "~/.emacs.d/private/erc.el")
+;(load "~/.emacs.d/private/erc.el")
 
 (require-package 'znc)
 
@@ -25,10 +25,10 @@
 (erc-track-mode t)
 
 (add-hook 'erc-mode-hook
-          '(lambda ()
-             (require 'erc-pcomplete)
-             (pcomplete-erc-setup)
-             (erc-completion-mode 1)))
+		  '(lambda ()
+			 (require 'erc-pcomplete)
+			 (pcomplete-erc-setup)
+			 (erc-completion-mode 1)))
 
 (require 'erc-fill)
 (erc-fill-mode t)
@@ -55,13 +55,13 @@
 
 (defadvice save-buffers-kill-emacs (before save-logs (arg) activate)
   (save-some-buffers t (lambda () (when (and (eq major-mode 'erc-mode)
-                                        (not (null buffer-file-name)))))))
+										(not (null buffer-file-name)))))))
 
 (add-hook 'erc-insert-post-hook 'erc-save-buffer-in-logs)
 (add-hook 'erc-mode-hook '(lambda () (when (not (featurep 'xemacs))
-                                  (set (make-variable-buffer-local
-                                        'coding-system-for-write)
-                                       'emacs-mule))))
+								  (set (make-variable-buffer-local
+										'coding-system-for-write)
+									   'emacs-mule))))
 
 
 ;; Truncate buffers so they don't hog core.

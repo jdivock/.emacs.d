@@ -40,18 +40,18 @@
 (setq json-reformat:indent-width 2)
 
 (add-hook 'json-mode-hook
-          (lambda ()
-            (make-local-variable 'js-indent-level)
-            (setq js-indent-level 2)))
+		  (lambda ()
+			(make-local-variable 'js-indent-level)
+			(setq js-indent-level 2)))
 
 (setq web-mode-ac-sources-alist
-      '(("css" . (ac-source-css-property))
-        ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
+	  '(("css" . (ac-source-css-property))
+		("html" . (ac-source-words-in-buffer ac-source-abbrev))))
 
 ;; Flip to JSX mode when working with .ios.js files
 (setq web-mode-content-types-alist
-      '(("jsx" . "**/*\\.ios.js\\'")
-        ))
+	  '(("jsx" . "**/*\\.ios.js\\'")
+		))
 
 ;; disable jshint since we prefer eslint checking
 (setq-default flycheck-disabled-checkers
@@ -64,36 +64,36 @@
 ;; disable json-jsonlist checking for json files
 (setq-default flycheck-disabled-checkers
   (append flycheck-disabled-checkers
-    '(json-jsonlist)))
+	'(json-jsonlist)))
 
 (add-hook 'web-mode-hook
-          (lambda () (web-mode-enable-auto-quoting nil)))
+		  (lambda () (web-mode-enable-auto-quoting nil)))
 
 (add-hook 'js2-mode-hook
-          (lambda () (flycheck-mode t)))
+		  (lambda () (flycheck-mode t)))
 
 (add-hook 'web-mode-hook
-          (lambda () (flycheck-mode t)))
+		  (lambda () (flycheck-mode t)))
 
 (font-lock-add-keywords
  'js2-mode `(("\\(function *\\)("
-              (0 (progn (compose-region (match-beginning 1) (match-end 1) "λ")
-                        nil)))))
+			  (0 (progn (compose-region (match-beginning 1) (match-end 1) "λ")
+						nil)))))
 ;; TODO: fix copypasta
 (font-lock-add-keywords
  'web-mode `(("\\(function *\\)("
-              (0 (progn (compose-region (match-beginning 1) (match-end 1) "λ")
-                        nil)))))
+			  (0 (progn (compose-region (match-beginning 1) (match-end 1) "λ")
+						nil)))))
 
 
 ;; Giant web-mode hook that probably belongs in a better place
 (defun my-web-mode-hook ()
   "Hooks for web mode."
   (setq web-mode-ac-sources-alist
-        '(("css" . (ac-source-css-property))
-          ("jsx" . (ac-source-words-in-buffer ac-source-words-in-same-mode-buffers))
-          ("js" . (ac-source-words-in-buffer ac-source-words-in-same-mode-buffers))
-          ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
+		'(("css" . (ac-source-css-property))
+		  ("jsx" . (ac-source-words-in-buffer ac-source-words-in-same-mode-buffers))
+		  ("js" . (ac-source-words-in-buffer ac-source-words-in-same-mode-buffers))
+		  ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
   (tern-mode t)
   )
 
@@ -108,16 +108,16 @@
 (setq inferior-js-program-command "node")
 
 (setq inferior-js-mode-hook
-      (lambda ()
-        ;; We like nice colors
-        (ansi-color-for-comint-mode-on)
-        ;; Deal with some prompt nonsense
-        (add-to-list
-         'comint-preoutput-filter-functions
-         (lambda (output)
-           (replace-regexp-in-string "\033\\[[0-9]+[GK]" "" output)
-           (replace-regexp-in-string ".*1G.*3G" "&GT;" output)
-           (replace-regexp-in-string "&GT;" "> " output)))))
+	  (lambda ()
+		;; We like nice colors
+		(ansi-color-for-comint-mode-on)
+		;; Deal with some prompt nonsense
+		(add-to-list
+		 'comint-preoutput-filter-functions
+		 (lambda (output)
+		   (replace-regexp-in-string "\033\\[[0-9]+[GK]" "" output)
+		   (replace-regexp-in-string ".*1G.*3G" "&GT;" output)
+		   (replace-regexp-in-string "&GT;" "> " output)))))
 
 (defun my/js-keybindings ()
   (interactive)

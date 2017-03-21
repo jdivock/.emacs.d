@@ -1,4 +1,4 @@
-(load "~/.emacs.d/private/jabber-private.el")
+;(load "~/.emacs.d/private/jabber-private.el")
 
 (require-package 'jabber)
 

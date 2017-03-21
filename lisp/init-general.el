@@ -1,4 +1,4 @@
-(require-package 'starter-kit)
+;;(require-package 'starter-kit)
 
 (require-package 'multi-term)
 ;; GENERAL BEHAVIOR
